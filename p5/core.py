@@ -1,8 +1,10 @@
 import pyglet
 import os, sys, importlib
-from pyglet import window
-from pyglet import font
+from pyglet import window, font
+from pyglet.gl import gl
    
+background_color = (0, .5, .8, 1)
+
 class OutputWindow(window.Window):
 		
 	def __init__(self, *args, **kwargs):
@@ -16,6 +18,9 @@ def size(height, width):
 	global win
 	win.set_size(height, width)
 	win.flip()
+
+def color(set_color):
+	gl.glClearColor(*set_color) 	
 
 # Test program begins here
 
